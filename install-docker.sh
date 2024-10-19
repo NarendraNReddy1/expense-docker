@@ -7,4 +7,9 @@ yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
+sudo growpart /dev/nvme0n1 4
+sudo lvextend -l +50%FREE /dev/RootVG/rootVol
+sudo lvextend -l +50%FREE /dev/RootVG/varVol
+sudo xfs_growfs /
+sudo xfs_growfs /var
 echo -e "$R logout and login again $N"
