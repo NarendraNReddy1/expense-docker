@@ -1,10 +1,11 @@
 version: '3.8'
 name: expense
-volumes:
-  mysql: # docker volume create myqsl
 networks:
   default:
     name: expense
+volumes:
+  mysql:
+    external: true    
 services:
   mysql:
     image: mysql:v1.0.0
