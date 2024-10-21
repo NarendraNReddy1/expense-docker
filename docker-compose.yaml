@@ -5,7 +5,7 @@ networks:
     name: expense
 volumes:
   mysql:
-    external: true    
+    #external: true    
 services:
   mysql:
     image: mysql:v1.0.0
